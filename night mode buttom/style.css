@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2b2b2b;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: 0.5s;
+
+    &.active {
+            background-color: #f8f8f8;  /*aqui es donde declaramos la funcion de active que creamos en 
+            javascript*/
+            
+    }
+}
+
+#toggle { /*el toggle es la casilla que envuelve nuestro boton*/
+    position: relative;
+    display: block;
+    width: 320px;
+    height: 160px;
+    border-radius: 160px;
+    background-color: #222;
+    transition: 0.5s;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 2px 8px rgba(0, 0, 0, 0.1)
+    inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+
+
+        &.active {/*la clase active, con esto que declaramos en el java se hacen las funciones*/  
+            background-color:red; 
+            box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1), inset 0 2px 8px rgba(255, 255, 255, 0.2)
+            inset 0 -4px 8px rgba(255, 255, 255, 0.2);
+            
+        .indicator {
+            left: 160px;
+            transition: 0.5s;
+            box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.1), inset 0 4px 4px rgba(255, 255, 255, 1)
+            inset 0 -4px 8px rgba(255, 255, 255, 1);
+            background: linear-gradient(to bottom, #eaeaea, #f9f9f9 );
+        }      
+    }    
+}
+
+
+.indicator { /*indicator es la bolita de desplazamiento*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #444, #222);/*con esto indicaremos que el 444 es el color de abajo*/
+    cursor: pointer;
+    scale: 0.9;/*con esto declaramos que el indicador sea de una escala menor osea que podemos hacer el boton mas pequeno*/
+    box-shadow: inset 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 4px 4px rgba(255, 255, 255, 0.2)
+    inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+    transition: 0.5s;/*es importante declarar la transicion en cada animacion para que los efectos no sean demasiado rapidos, si no pones esta
+    por ejemplo, el boton se regresara demasiado rapido*/
+}
